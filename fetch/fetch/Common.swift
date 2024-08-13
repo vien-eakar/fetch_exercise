@@ -12,6 +12,7 @@ enum Status {
     case notStarted
     case fetching
     case success
+    case empty
     case failed(error: Error)
 }
 

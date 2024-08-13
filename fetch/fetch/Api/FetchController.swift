@@ -45,7 +45,8 @@ struct FetchController: FetchControllerProtocol {
         guard let resultData = try? JSONDecoder().decode(Meals.self, from: data) else {
             throw NetworkError.badData
         }
-        return resultData.listMeals[0]
+        
+        return resultData.listMeals[safeIndex: 0]
     }
     
     

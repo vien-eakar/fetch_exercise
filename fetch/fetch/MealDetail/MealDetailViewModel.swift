@@ -25,9 +25,10 @@ class MealDetailViewModel: ObservableObject {
             let data = try await fetchController.fetchMealDetail(mealId: mealId)
             if let data = data {
                 self.mealDetail = data
+                status = .success
+            } else {
+                status = .empty
             }
-            status = .success
-            
         }catch {
             self.status = .failed(error: error)
         }
